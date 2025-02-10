@@ -120,51 +120,7 @@ app.get('/animes', (req, res) => {
 });
 
 
-// Ejemplo3
-app.get('/imagen', (req, res) => {
-    res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Imagen de Fondo</title>
-            <style>
-                body {
-                    background-image: url('/RE4.png');
-                    background-size: cover;
-                    background-position: center;
-                    height: 100vh;
-                    margin: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    font-family: Arial, sans-serif;
-                }
-                h1 {
-                    background-color: rgba(0, 0, 0, 0.5);
-                    padding: 20px;
-                    border-radius: 10px;
-                }
-                  button {
-                    margin: 10px;
-                    padding: 10px;
-                    font-size: 16px;
-                    cursor: pointer;
-                }
-            </style>
 
-            
-        </head>
-        <body>
-           <button onclick="location.href='/curso'">Ir a Curso</button>
-           <button onclick="location.href='/animes'">Ir a Animes</button>
-            
-        </body>
-        </html>
-    `);
-});
 
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
