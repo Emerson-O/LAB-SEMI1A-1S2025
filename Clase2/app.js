@@ -1,11 +1,8 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 
 const PORT = 3000;
 
-// Configura el middleware para servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
@@ -63,7 +60,6 @@ app.get('/curso', (req, res) => {
         <body>
             <h1 style="color: blue;">Seminario De Sistemas 1 A</h1>
             <button onclick="location.href='/animes'">Ir a Animes</button>
-            <button onclick="location.href='/imagen'">Ir a Imagen</button>
         </body>
         </html>
     `);
@@ -113,7 +109,6 @@ app.get('/animes', (req, res) => {
     });
     html += `</table>
             <button onclick="location.href='/curso'">Ir a Curso</button>
-            <button onclick="location.href='/imagen'">Ir a Imagen</button>
         </body>
         </html>`;
     res.send(html);
