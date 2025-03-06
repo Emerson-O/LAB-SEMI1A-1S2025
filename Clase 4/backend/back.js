@@ -15,15 +15,14 @@ app.use(bodyParser.json({limit: "100mb"}));
 app.use(bodyParser.urlencoded({limit:"100mb",extend:true}));
 
 const port = 9000
-
+///////////////////////cliente////////////////////
 // Se hace un require de SDK
 var AWS = require('aws-sdk');
-
 // Se importan las credenciales
 const aws_keys = require('./creds_template.js')
-
 // Se accede al servicio
 const s3 = new AWS.S3(aws_keys.s3)
+//////////////////////////////////////////
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -43,7 +42,7 @@ app.post('/subir_imagen', function (req,res){
 
   // Parametros para la carga de la imagen
   const params = {
-    Bucket: "ejemplo2clase4",
+    Bucket: "clase4ejemplo",
     Key: nombreis3,
     Body: buff,
     ContentType: "image"
@@ -66,7 +65,7 @@ app.post('/subir_pdf', (req,res) =>{
 
   // Parametros para la carga del pdf
   const params = {
-    Bucket: "ejemplo2clase4",
+    Bucket: "clase4ejemplo",
     Key: nombrepdfs3,
     Body: buff,
     ContentType: "application/pdf"
@@ -80,7 +79,7 @@ app.get('/obtener_imagen',(req,res)=>{
   var id = req.body.id;
   var nombrei = "Imagenes/"+id+".jpg";
   var getParams = {
-    Bucket: "ejemplo2clase4",
+    Bucket: "clase4ejemplo",
     Key: nombrei
   }
 
@@ -98,7 +97,7 @@ app.get('/obtener_pdf',(req,res)=>{
   var id = req.body.id;
   var nombrepdf = "pdfs/"+id+".pdf";
   var getParams = {
-    Bucket: "ejemplo2clase4",
+    Bucket: "clase4ejemplo",
     Key: nombrepdf
   }
 
