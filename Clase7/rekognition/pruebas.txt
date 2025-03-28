@@ -53,3 +53,5 @@
   "imagen1": "",
   "imagen2": ""
 }
+
+http://localhost:9000/compararfotos
